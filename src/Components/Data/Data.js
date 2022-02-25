@@ -31,8 +31,14 @@ export const PortData=[
     },
     {
         title:'Simple Bank System',
-        pic:'banks.jpg',
+        pic:'banks.png',
         link:'https://dibbendubanikpurna.github.io/bank-project/',
         gitLink:'https://github.com/DibbenduBanikPurna/bank-project'
+    },
+    {
+        title:"My Small Resturent",
+        pic:'resturent.png',
+        link:'https://quirky-wing-256c49.netlify.app',
+        gitLink:'https://github.com/DibbenduBanikPurna/small-resturent'
     }
 ]

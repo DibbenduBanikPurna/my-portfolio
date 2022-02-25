@@ -1,0 +1,15 @@
+
+ .About{
+    min-height: 86vh;
+} 
+.pic{
+    height: 120px;
+}
+.text{
+    text-align: justify;
+}
+.texts{
+    text-align: justify;
+    font-family: sans-serif;
+    font-size: 18px;
+}

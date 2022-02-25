@@ -1,20 +1,10 @@
 .App {
-  text-align: center;
+  
+  background-color: #0A192F;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-.nav-link:hover{
-  background-color: tomato;
-}
-.header{
-  background-image: url('./images/back.jpg');
-  background-repeat: no-repeat;
-  background-position: 0%;
-  height: 100vh;
-}
+
 .font{
   background-color: yellow;
   font-size: 38px;
@@ -37,10 +27,26 @@
   height: 100vh;
   color: white;
 }
+.contact{
+ 
+ min-height: 100vh;
+background-color: black;
+ 
+ 
+
+ 
+  
+}
+
+
 .forms{
-  margin: 20px;
-  padding: 20px;
-  box-shadow: 1px 1px 2px gray;
+ 
+  padding: 40px;
+  box-shadow: 5px 5px 5px 25px white;
+  background-color:gray;
+  justify-content: left;
+  text-align: left;
+  color: white;
 }
 
 
@@ -54,7 +60,5 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-
 
 

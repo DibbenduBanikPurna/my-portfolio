@@ -1,55 +1,54 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import './Contact.css'
+import emailjs from 'emailjs-com';
+//import Footer from '../Footer/Footer';
 const Contact = () => {
-    const {
-        register,
-        handleSubmit,
-      
-        formState: { errors }
-      } = useForm();
-    
-      const onSubmit = (data,e) => {
-        alert(JSON.stringify(data));
-        e.preventDefault()
-      }; 
 
-    return (
-        <div className="container">
-            <div className="col-md-4 m-auto">
+  function sendEmail(e) {
+    e.preventDefault();
 
-           
-             <form className="forms" onSubmit={handleSubmit(onSubmit)}>
-      <label> Name</label>
-      <input className="form-control" placeholder="Enter Name"
-        {...register("firstName", {
-          required: true,
-          maxLength: 20,
-          
-          pattern: /^[A-Za-z]+$/i
-        })}
-      />
-      {errors?.firstName?.type === "required" && <p>Name field is required</p>}
-     
-      {errors?.firstName?.type === "pattern" && (
-        <p>Alphabetical characters only</p>
-      )}
-      <br/>
-      <label>Email</label>
-      <input type="email" placeholder="Email"  className="form-control" {...register("email", {required:true, })} />
-      {errors?.email?.type === "required" && <p>email field is required</p>}
-        <br/>
-        <label>Message</label>
-      <input className="form-control"  type="text-area" placeholder="Enter Text">
+    emailjs.sendForm('service_ebieg2k', 'template_5gz6o2z', e.target, 'user_9Bd2QAgonb6gDRkHll4e9')
+      .then((result) => {
+        console.log(result.text);
+        alert("Message send successfully")
+      }, (error) => {
+        console.log(error.text);
+        alert("something error!")
+      });
+  }
 
-      </input>
-      <br/>
-      
-    
-      <input   type="submit" />
-    </form>
-    </div>
+
+  return (
+    <section className="Contact">
+      <h3 className="pt-5 text-light">Contact Me</h3>
+      <br />
+      <div className="row">
+        <div className="col-md-5 m-auto">
+
+
+          <form className="form-box" onSubmit={sendEmail}>
+
+            <input placeholder="name" className="form-control " type="name" name="user_name" />
+
+            <input placeholder="email" className="form-control mt-2 " type="email" name="email" />
+
+
+
+            <textarea cols="10" rows="8" placeholder="Enter text" className="form-control mt-2 " name="message" />
+
+            <input className="btn btn-outline-warning form-control btn-lg mt-2" type="submit" value="Send" />
+          </form>
         </div>
-    );
+
+      </div>
+
+
+
+
+
+    </section>
+
+  );
 };
 
 export default Contact;
